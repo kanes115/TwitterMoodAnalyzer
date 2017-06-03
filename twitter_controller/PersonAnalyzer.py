@@ -2,11 +2,11 @@ import random
 import re
 
 import indicoio
+from twitter_controller.Plotter import Factor, Plotter
+from twitter_controller.TwitterDownloader import TwitterDownloader, TwitterDownloaderException
 from indicoio import IndicoError
 
 from ENV import APIs
-from Plotter import Factor, Plotter
-from TwitterDownloader import TwitterDownloader, TwitterDownloaderException
 
 
 class PersonAnalyzer:
@@ -23,10 +23,10 @@ class PersonAnalyzer:
         self.personas_stats = None
         self.emotions_stats = None
         self.profile_pict_stats = None
-        self.plotter = Plotter()
+        self.plotter = Plotter(common_name=person.get_name())
         self._check_resources()
 
-    def full_analyze(self):
+    def full_analyze(self, links_to_check=30):
         i = 1
         self.analyze_tweets_politicaly()
         print('Analysing... ' + str(round(i / self.AMOUNT_OF_FACTORS, 4) * 100) + '%')
@@ -43,7 +43,7 @@ class PersonAnalyzer:
         self.analyze_profile_pict()
         print('Analysing... ' + str(round(i / self.AMOUNT_OF_FACTORS, 4) * 100) + '%')
         i += 1
-        self.analyze_links()
+        self.analyze_links(amount=links_to_check)
         print('Analysing... 100%')
 
     def analyze_tweets_politicaly(self):

@@ -1,16 +1,14 @@
-import threading
-
-import matplotlib.pyplot as plt
 from pylab import *
 
 
 class Plotter:
 
-    def __init__(self, factors_list=list()):
+    def __init__(self, factors_list=list(), common_name=''):
         '''
         :param factors_list: list of Factor objects
         '''
         self.factors_list = factors_list
+        self.common_name = common_name
 
     def plot_all(self):
         for factor in self.factors_list:
@@ -33,7 +31,7 @@ class Plotter:
 
         plt.bar(range(len(t12)), t12, align='center')
         plt.xticks(range(len(t12)), t11, size='small')
-        plt.suptitle(factor.name, fontsize=20)
+        plt.suptitle(factor.name + '\n' + self.common_name, fontsize=20)
         plt.show()
         pass
 

@@ -1,11 +1,11 @@
 import requests
 import twitter
+from twitter_controller.Text import Text
 from requests import RequestException
 from requests_oauthlib import OAuth1
 from twitter import TwitterError
 
 from ENV import APIs
-from Text import Text
 
 
 class TwitterDownloader:

@@ -6,6 +6,7 @@ class Person:
 
     def __init__(self, name):
         self.twitter_id = id
+        self.name = name
         self.texts = []
         self.downloader = TwitterDownloader()
         self.downloader.check_authentication()
@@ -37,3 +38,6 @@ class Person:
     def get_tweetcontent_generator(self):
         for i in self.get_texts():
             yield(i.content)
+
+    def get_name(self):
+        return self.name
