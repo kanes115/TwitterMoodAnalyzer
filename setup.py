@@ -10,5 +10,7 @@ setup(name='twitter_controller',
       packages=['twitter_controller'],
       install_requires=[
         'numpy',
+        'indicoio',
+        'pytest'
       ],
       zip_safe=False)

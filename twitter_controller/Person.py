@@ -1,5 +1,5 @@
-from Text import Text
-from TwitterDownloader import TwitterDownloader
+from twitter_controller.Text import Text
+from twitter_controller.TwitterDownloader import TwitterDownloader
 
 
 class Person:

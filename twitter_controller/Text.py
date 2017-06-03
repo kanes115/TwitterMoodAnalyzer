@@ -15,7 +15,7 @@ class Text:
         for oh in other.hashtags:
             if oh not in res_hashs:
                 res_hashs.append(oh)
-        return Text(self.content + '\n' + other.content,
+        return Text(self.content + other.content,
                     res_hashs,
                     self.links + other.links)
 
@@ -38,10 +38,13 @@ class Text:
 
     def _separate_links(self, links):
         for l in links:
-            if re.match("^https://twitter.com(.*)", l):
+            if re.match("^http[s]?://(www\.)?twitter.com(.*)", l):
                 self.tweet_links.append(l)
             else:
                 self.external_links.append(l)
 
     def get_external_links(self):
         return self.external_links
+
+    def get_content(self):
+        return self.content
