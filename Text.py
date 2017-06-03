@@ -1,7 +1,7 @@
 import re
 
-class Text:
 
+class Text:
     def __init__(self, content, hashtags=list(), links=list()):
         self.content = content
         self.tweet_links = []
@@ -9,10 +9,6 @@ class Text:
         self.links = links
         self.hashtags = hashtags
         self._separate_links(links)
-
-    def add_rate_from_links(self):
-        #TODO: implement
-        pass
 
     def __add__(self, other):
         res_hashs = self.hashtags
@@ -46,3 +42,6 @@ class Text:
                 self.tweet_links.append(l)
             else:
                 self.external_links.append(l)
+
+    def get_external_links(self):
+        return self.external_links

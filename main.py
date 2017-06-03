@@ -1,5 +1,12 @@
+import re
+
 from Person import Person
+from PersonAnalyzer import PersonAnalyzer
 
-p = Person('Donald Trump')
+p = Person('Theresa May')
 
-print(p.all_text_as_one())
+a = PersonAnalyzer(p)
+
+a.full_analyze()
+
+a.plot_all()
