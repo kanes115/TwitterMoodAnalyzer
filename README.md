@@ -1,3 +1,12 @@
+Twitter Controller
+==========
+
+This is a program that is supposed to help people get to know politicians and generally public figures better.
+
+## Installation
+
+
+
 Zadanie 03
 ==========
 
