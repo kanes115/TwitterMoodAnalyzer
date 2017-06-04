@@ -15,7 +15,7 @@ class Text:
         for oh in other.hashtags:
             if oh not in res_hashs:
                 res_hashs.append(oh)
-        return Text(self.content + other.content,
+        return Text(self.content + ' ' + other.content,
                     res_hashs,
                     self.links + other.links)
 

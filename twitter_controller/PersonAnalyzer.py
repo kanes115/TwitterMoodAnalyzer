@@ -7,15 +7,16 @@ from twitter_controller.TwitterDownloader import TwitterDownloader, TwitterDownl
 from indicoio import IndicoError
 
 from ENV import APIs
-
+import os
 
 class PersonAnalyzer:
     LANGUAGE = 'english'
     AMOUNT_OF_FACTORS = 7
-    TRUSTED_SOURCE = 'resources/TrustedSources'
-    NOTTRUSTED_SOURCE = 'resources/NotTrustedSources'
+    TRUSTED_SOURCE = os.path.dirname(__file__) + '/resources/TrustedSources'
+    NOTTRUSTED_SOURCE = os.path.dirname(__file__) + '/resources/NotTrustedSources'
 
     def __init__(self, person):
+        print(self.TRUSTED_SOURCE)
         self.person = person
         indicoio.config.api_key = APIs.indicoio
         self.political_stats = None
