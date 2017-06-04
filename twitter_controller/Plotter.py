@@ -1,4 +1,4 @@
-from pylab import *
+from pylab import bar, xticks, suptitle, show
 
 
 class Plotter:
@@ -29,10 +29,10 @@ class Plotter:
         t11 = list(map(lambda e: e[0], factor.vals))
         t12 = list(map(lambda e: e[1], factor.vals))
 
-        plt.bar(range(len(t12)), t12, align='center')
-        plt.xticks(range(len(t12)), t11, size='small')
-        plt.suptitle(factor.name + '\n' + self.common_name, fontsize=20)
-        plt.show()
+        bar(range(len(t12)), t12, align='center')
+        xticks(range(len(t12)), t11, size='small')
+        suptitle(factor.name + '\n' + self.common_name, fontsize=20)
+        show()
         pass
 
 
