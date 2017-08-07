@@ -1,4 +1,4 @@
-Twitter Controller
+Twitter Mood Analyzer
 ==========
 This is a python package providing tools for analyzing twitter posts. It decides about user's political views, his general attitiude etc. It also provides some tools for creating your own analysis and twitts parsing.
 
